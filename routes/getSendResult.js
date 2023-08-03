@@ -19,6 +19,7 @@ exports.asyncHandler = (handler) => {
       const result = await handler(req, res, next);
       res.send(exports.getResult(result));
     } catch (err) {
+      // console.log("🚀 ~ file: getSendResult.js:22 ~ return ~ err:", err)
       next(err);
     }
   };

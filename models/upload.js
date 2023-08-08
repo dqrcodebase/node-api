@@ -8,11 +8,15 @@ module.exports = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    chunkHash: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    size: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
-    finish: {
+    type: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    isFinish: {
       type: DataTypes.BOOLEAN,
       allowNull: false
     }
@@ -20,6 +24,5 @@ module.exports = sequelize.define(
   {
     createdAt: false,
     updatedAt: false,
-    paranoid: true,
   }
 )

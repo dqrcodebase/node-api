@@ -16,6 +16,5 @@ module.exports = sequelize.define(
   {
     createdAt: false,
     updatedAt: false,
-    paranoid: true,
   }
 )

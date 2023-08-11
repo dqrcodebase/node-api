@@ -9,7 +9,7 @@ module.exports = sequelize.define(
       allowNull: false,
     },
     size: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT(11),
       allowNull: false
     },
     type: {

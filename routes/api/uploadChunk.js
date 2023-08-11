@@ -70,7 +70,10 @@ router.get(
     console.log("🚀 ~ file: uploadChunk.js:70 ~ asyncHandler ~ result:", result)
     const {type} = result
     const extensionList = {
-      'image/webp': 'webp'
+      'image/webp': 'webp',
+      'image/jpeg': 'jpeg',
+      'text/plain': 'txt',
+      'video/x-matroska': 'mkv'
     }
     const extension = extensionList[type]
     //合并文件
@@ -107,7 +110,7 @@ async function thunkStreamMerge(sourceFiles, targetFiles) {
 function thunkStreamMergeProgress(fileList, fileWriteStream, sourceFiles) {
   console.log('fileList',fileList.length)
   if (!fileList.length) {
-    return fileWriteStream.end("console.log('完成了')")
+    return fileWriteStream.end()
   }
   const currentFile = path.resolve(__dirname, sourceFiles, fileList.shift())
   const currentReadSteam = fs.createReadStream(currentFile)

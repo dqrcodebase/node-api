@@ -48,7 +48,7 @@ router.post(
         await fs.promises.mkdir(filename)
         return false
       } else {
-        return res
+        return res.map(item => item.chunkHash)
       }
     }
   })
